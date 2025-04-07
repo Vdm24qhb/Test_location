@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AR.js A-Frame Location-based</title>
-  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-  <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/three.js/build/ar-threex-location-only.js'></script>
-  <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
-</head>
-<body>
-  <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
-    
-    <!-- Camera with GPS tracking -->
-    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+  <head>
+    <title>AR.js A-Frame Location-based</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/three.js/build/ar-threex-location-only.js'></script>
+    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
+  </head>
+  <body>
+    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+      
+      <!-- Camera with GPS tracking -->
+      <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
 
-    <a-assets>
-    <a-asset-item id="treeModel" src="arrow_sign_direction_navigation_pointer_symbol/scene.gltf"></a-asset-item>
-    </a-assets>
+      <!-- Assets Section -->
+      <a-assets>
+        <!-- Load your GLTF model here -->
+        <!-- Example with your arrow sign model -->
+        <a-asset-item id="treeModel" src="arrow_sign_direction_navigation_pointer_symbol/scene.gltf"></a-asset-item>
 
-    <!-- GLTF Model at GPS Location -->
-    <a-entity 
-      gps-entity-place="latitude: 53.228324; longitude: -4.129439;" 
-      gltf-model="#treeModel" 
-      scale="0.1 0.1 0.1"
-      rotation="0 180 0">
-    </a-entity>
+        <!-- Example of loading a GIF as a texture -->
+        <img id="gifTexture" src="your-animation.gif" />
+      </a-assets>
 
-    <!-- Text at the GPS Location -->
-    <a-text 
-      value="Welcome to the Cathedral" 
-      look-at="[gps-camera]" 
-      scale="10 10 10"
-      position="0 3 0"  
-      color="yellow"
-      gps-entity-place="latitude: 53.228324; longitude: -4.129439">
-    </a-text>
+      <!-- GLTF Model at GPS Location -->
+      <a-entity 
+        gps-entity-place="latitude: 53.2277722; longitude: -4.1303182;" 
+        gltf-model="#treeModel" 
+        scale="0.1 0.1 0.1"  <!-- Adjust the scale to make sure the model fits -->
+        rotation="0 180 0">
+      </a-entity>
 
-  </a-scene>
-</body>
+      <!-- Text at the GPS Location -->
+      <a-text 
+        value="Welcome to the Cathedral" 
+        look-at="[gps-camera]" 
+        scale="10 10 10"
+        position="0 3 0"  <!-- Adjusted position -->
+        color="yellow"
+        gps-entity-place="latitude: 53.2277722; longitude: -4.1303182;">
+      </a-text>
+
+      <!-- Example of a static plane with GIF texture -->
+      <a-plane 
+        gps-entity-place="latitude: 53.2277722; longitude: -4.1303182;" 
+        src="#gifTexture" 
+        scale="10 10 10"   <!-- Adjust the scale to fit the GIF on the plane -->
+        position="0 5 0"
+        rotation="0 0 0">
+      </a-plane>
+
+    </a-scene>
+  </body>
 </html>
