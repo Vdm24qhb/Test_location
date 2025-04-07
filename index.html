@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AR.js A-Frame Location-based</title>
-<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/three.js/build/ar-threex-location-only.js'></script>
-<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
+  <title>AR.js A-Frame Location-based</title>
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/three.js/build/ar-threex-location-only.js'></script>
+  <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
 </head>
 <body>
-<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+  <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+    
+    <!-- Camera with GPS tracking -->
     <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
-    <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude:53.2277722; longitude:  -4.1303182" scale="10 10 10"></a-entity>
-</a-scene>
+
+    <!-- Assets Section -->
+    <a-assets>
+      <a-asset-item id="treeModel" src="arrow_sign_direction_navigation_pointer_symbol/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <!-- GLTF Model at GPS Location -->
+    <a-entity 
+      gps-entity-place="latitude: 53.2277722; longitude: -4.1303182;" 
+      gltf-model="#treeModel" 
+      scale="0.05 0.05 0.05"
+      rotation="0 180 0">
+    </a-entity>
+
+    <!-- Text at the GPS Location -->
+    <a-text 
+      value="Welcome to the Cathedral" 
+      look-at="[gps-camera]" 
+      scale="10 10 10"
+      position="0 3 0"
+      color="yellow"
+      gps-entity-place="latitude: 53.2277722; longitude: -4.1303182;">
+    </a-text>
+
+  </a-scene>
 </body>
 </html>
