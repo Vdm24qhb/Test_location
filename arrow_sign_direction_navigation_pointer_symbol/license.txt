@@ -1,0 +1,11 @@
+Model Information:
+* title:	Arrow Sign Direction, Navigation Pointer Symbol
+* source:	https://sketchfab.com/3d-models/arrow-sign-direction-navigation-pointer-symbol-8a9a1e03b0334391be47d1d16a4c4b76
+* author:	B1Blender (https://sketchfab.com/B1Blender)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Arrow Sign Direction, Navigation Pointer Symbol" (https://sketchfab.com/3d-models/arrow-sign-direction-navigation-pointer-symbol-8a9a1e03b0334391be47d1d16a4c4b76) by B1Blender (https://sketchfab.com/B1Blender) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
