@@ -12,17 +12,15 @@
     <!-- Camera with GPS tracking -->
     <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
 
-    <!-- Assets Section -->
     <a-assets>
-      <a-asset-item id="treeModel" src="arrow_sign_direction_navigation_pointer_symbol/scene.gltf"></a-asset-item>
+    <a-asset-item id="treeModel" src="arrow_sign_direction_navigation_pointer_symbol/scene.gltf"></a-asset-item>
     </a-assets>
 
     <!-- GLTF Model at GPS Location -->
     <a-entity 
       gps-entity-place="latitude: 53.2277722; longitude: -4.1303182;" 
       gltf-model="#treeModel" 
-       position="0 30 0"
-      scale="0.05 0.05 0.05"
+      scale="0.1 0.1 0.1"
       rotation="0 180 0">
     </a-entity>
 
@@ -31,8 +29,8 @@
       value="Welcome to the Cathedral" 
       look-at="[gps-camera]" 
       scale="10 10 10"
-      position="0 30 0"
-      color="red"
+      position="0 3 0"  
+      color="yellow"
       gps-entity-place="latitude: 53.2277722; longitude: -4.1303182;">
     </a-text>
 
