@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>AR.js Barcode Marker with Text & Model</title>
+
+    <!-- A-Frame & AR.js -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.2/aframe/build/aframe-ar.min.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      embedded
+      vr-mode-ui="enabled: false"
+      arjs="sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 4x4;"
+    >
+      <!-- Assets -->
+      <a-assets>
+        <!-- 3D Model -->
+        <a-asset-item id="treeModel" src="arrow_icon/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <!-- Barcode Marker ID 369 -->
+      <a-marker type="barcode" value="369">
+        
+        <!-- 3D Model -->
+        <a-entity
+          gltf-model="#treeModel"
+          scale="0.5 0.5 0.5" 
+          position="0 0 -1" 
+          rotation="0 0 0"
+        ></a-entity>
+
+        <!-- Text -->
+        <a-text
+          value="This is way to Bangor 
+           Main arts buliding"
+          position="0 1 0" 
+          align="center"
+          color="red"
+          scale="1 1 1" 
+        ></a-text>
+      </a-marker>
+
+      <!-- Camera -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
+
