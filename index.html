@@ -16,9 +16,6 @@
       <a-assets>
        
         <a-asset-item id="treeModel" src="arrow_sign_direction_navigation_pointer_symbol/scene.gltf"></a-asset-item>
-
-       
-        <img id="gifTexture" src="your-animation.gif" />
       </a-assets>
 
       
@@ -34,20 +31,14 @@
         value="Welcome to the Cathedral" 
         look-at="[gps-camera]" 
         scale="10 10 10"
-        position="0 3 0"
+        position="0 30 0"
         color="red"
-        gps-entity-place="latitude: 53.2277722; longitude: -4.1303182;">
+        align="center"
+        gps-entity-place="latitude: 53.228376; longitude: -4.129557;">
       </a-text>
 
       
-      <a-plane 
-        gps-entity-place="latitude: 53.2277722; longitude: -4.1303182;" 
-        src="#gifTexture" 
-        scale="10 10 10"   
-        position="0 5 0"
-        rotation="0 0 0">
-      </a-plane>
-
+   
     </a-scene>
   </body>
 </html>
